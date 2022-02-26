@@ -21,4 +21,4 @@ const ruleSchema = new schema({
     ]
 })
 
-module.exports = mongoose.model("rules",ruleSchema);
+module.exports = mongoose.model("Rules",ruleSchema);

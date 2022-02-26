@@ -6,9 +6,12 @@ const {imgRecog} = require("./imgRecognize");
 const path = require("path");
 const auth = require("./controllers/auth");
 const authVerify = require("./utils/authVerify");
+const rulesController=require("./controllers/rules.js");
+
 app.use(cors({
     origin : "*"
 }));
+app.use(express.json());
 const multer = require("multer");
 const docController = require("./controllers/document");
 // const path = require("path");
@@ -45,8 +48,14 @@ app.post("/uploadDocument",authVerify,docController.uploadADocument);
 
 app.post("/verifyDocument",authVerify,docController.verifyDocument);
 
-mongoose.connect("dkkdkdkdkkdkdk")
+app.post("/addrule",authVerify,rulesController.addRule);
+
+app.delete("/deleteRule",authVerify,rulesController.deleteRule);
+
+app.put("/updateRule",authVerify,rulesController.updateRule);
+mongoose.connect("gggggggggg")
 .then((result) => {
+    console.log("connected");
     app.listen(8080);
 })
 .catch((err) => {
