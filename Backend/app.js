@@ -53,7 +53,7 @@ app.post("/addrule",authVerify,rulesController.addRule);
 app.delete("/deleteRule",authVerify,rulesController.deleteRule);
 
 app.put("/updateRule",authVerify,rulesController.updateRule);
-mongoose.connect("")
+mongoose.connect("gggggggggg")
 .then((result) => {
     console.log("connected");
     app.listen(8080);
