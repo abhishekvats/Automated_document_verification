@@ -1,3 +1,7 @@
+*{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+}
 body {
     margin: 0px;
     display: flex;
@@ -8,11 +12,17 @@ body {
 }
 
 .main {
-    width: 500px;
-    height: 500px;
-    background-color: red;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 500px;
+    background-color: rgb(58, 132, 202);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
 }
+
 
 .headder {
     width: 100%;
@@ -21,10 +31,89 @@ body {
     flex-direction: row;
 }
 
-.signin {
-    background-color: blue;
+.color{
+    color: white;
 }
+.signin {
+    /* background-color: rgb(138, 177, 221); */
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px 0px 0px 10px;
+    width: 4.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    transition: transform .1s ease-in-out;
+    /* color: white; */
+}
+/* .signin:hover{
+    background-color: aqua;
+    transform: scale(1.1);
+} */
 
 .signup {
-    background-color: violet;
+    background-color: rgb(138, 177, 221);
+    border-radius: 10px;
+    margin: 10px 0px 0px 5px;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 4rem;
+    height: 2.5rem;
+    transition: transform .1s ease-in-out;
+    color: white;
+
+
+}
+.signup:hover{
+    background-color: blueviolet;
+    transform: scale(1.1);
+    color: white;
+}
+form{
+    /* background-color: black; */
+    margin: 0px 4rem;
+}
+.signUp_part{
+    position: absolute;
+    z-index: -1;
+    background-color: blueviolet;
+}
+.signin_UP{
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px 0px 0px 5px;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 4rem;
+    height: 2.5rem;
+    transition: transform .1s ease-in-out;
+}
+.signin_UP:hover{
+    background-color: rgb(58, 132, 202);
+    transform: scale(1.1);
+    color: white;
+}
+.signup_UP {
+    background-color: rgb(171, 118, 221);
+
+    border-radius: 10px;
+    margin: 10px 0px 0px 5px;
+    text-align: center;
+    color: white;
+    width: 4.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+
+
+}
+.btn_signup_part{
+    background-color: rgb(86, 5, 161);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: transform .1s ease-in-out;
+}
+.btn_signup_part:hover{
+    transform: scale(1.1);
 }
