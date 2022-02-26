@@ -1,0 +1,24 @@
+<div class="head">
+                Fields
+            </div>
+            <div class="cardlist">
+                Name : &emsp;
+                <input type="text">
+            </div>
+            <div class="cardlist">
+                Age : &emsp;
+                <input type="number">
+            </div>
+            <div class="cardlist">
+                Document No :
+                <input type="text">
+            </div>
+            <div class="cardlist">
+                Phone No : &emsp;
+                <input type="number">
+
+            </div>
+            <div class="cardlist">
+                Address Line :
+                <input type="text">
+            </div>
