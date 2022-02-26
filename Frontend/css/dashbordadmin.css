@@ -5,6 +5,10 @@
     height: 90vh;
 }
 
+.nav {
+    margin: 0px 30px;
+}
+
 .card {
     width: 400px;
     min-height: 300px;

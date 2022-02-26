@@ -1,4 +1,4 @@
-const typedoc = [{
+const typedoclist = [{
         name: 'Rashan Card',
         // fields:{
         //     Name:true,
