@@ -19,6 +19,6 @@ document.getElementById("signup").addEventListener("click",(event) => {
     .then((data) => {
         console.log(data);
         alert(data.message);
-        // window.location.href = "../userHome.html";
+        document.getElementById("su").style.zIndex = -1;
     })
 })

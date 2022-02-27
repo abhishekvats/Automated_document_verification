@@ -16,6 +16,6 @@ document.getElementById("login").addEventListener("click",(event) => {
     .then((data) => {
         console.log(data);
         alert(data.message);
-        window.location.href = "../userHome.html";
+        window.location.href = "/Frontend/userServiceList.html";
     })
 })
