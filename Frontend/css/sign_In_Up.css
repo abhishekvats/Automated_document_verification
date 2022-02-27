@@ -27,12 +27,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 79vh;
+    /* height: 79vh; */
     flex-direction: column;
 }
 
 .main {
-    margin-bottom: 4rem;
+    margin-top: 4rem;
     min-width: 400px;
     max-width: 500px;
     min-height: 500px;
