@@ -42,7 +42,7 @@ app.post("/signup",auth.signup);
 
 app.post("/login",auth.login);
 
-app.get("/imgRecognize",authVerify,imgRecog);
+app.get("/imgRecognize",imgRecog);
 
 app.post("/uploadDocument",authVerify,docController.uploadADocument);
 
