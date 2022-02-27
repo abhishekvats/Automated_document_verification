@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    <div class="main">
+    <div class="main" id="lg">
 
         <div class="headder">
             <div class="signin">Sign In</div>
-            <div class="signup">Sign up</div>
+            <div class="signup" id="signup-toggle">Sign up</div>
         </div>
 
         <form>
@@ -38,7 +38,7 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> -->
-            <button type="submit" id="login" class="btn btn-primary">Submit</button>
+            <button type="submit" id="login" class = "btn_signin_part">Submit</button>
           </form>
           <!-- <div class="headder">
             <div class="signin">Sign In</div>
@@ -47,10 +47,10 @@
 <!-- -------------------signup------------------------- -->
         
     </div>
-    <div class="main signUp_part">
+    <div class="main signUp_part" id="su">
 
         <div class="headder">
-            <div class="signin_UP">Sign In</div>
+            <div class="signin_UP" id="signin-toggle">Sign In</div>
             <div class="signup_UP">Sign up</div>
         </div>
 
@@ -83,6 +83,8 @@
           </form>
         
     </div>
+    <script src="./Javascript/login.js"></script>
+    <script src="./Javascript/signup.js"></script>
 </body>
 
 </html>
