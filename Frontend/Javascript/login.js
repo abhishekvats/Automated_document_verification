@@ -1,4 +1,5 @@
-document.getElementById("login").addEventListener("click",() => {
+document.getElementById("login").addEventListener("click",(event) => {
+    event.preventDefault();
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     fetch("http://localhost:8080/login",{

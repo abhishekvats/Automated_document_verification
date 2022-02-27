@@ -10,13 +10,14 @@ document.getElementById("signup").addEventListener("click",() => {
         body : JSON.stringify({
             email : email,
             name : name,
-            password : password
+            password : password,
+            userType : "Officer"
         })
     })
     .then(res => res.json())
     .then((data) => {
         console.log(data);
         alert(data.message);
-        window.location.href = "../userHome.html";
+        // window.location.href = "../userHome.html";
     })
 })
