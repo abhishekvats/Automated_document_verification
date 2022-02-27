@@ -13,7 +13,8 @@ exports.uploadADocument = async (req,res,next) => {
     let docData = new document({
         docPurpose : req.body.docPurpose,
         ruleId : ruleId,
-        docUrl : docUrl
+        docUrl : docUrl,
+        userId : req.userId
     });
     await docData.save();
     return res.status(200).json({
@@ -59,5 +60,15 @@ exports.verifyDocument = async (req,res,next) => {
         message : docData.isVerified ? "successfully verified": "verification failed",
         statusCode : 200,
         fieldsNotValid
+    })
+}
+exports.getUserDocs = async (req,res,next) => {
+    let userId = req.userId;
+    let allDocs = await document.find({
+        userId : req.userId
+    });
+    return res.status(200).json({
+        message : "success",
+        
     })
 }

@@ -33,6 +33,10 @@ const documentSchema = new schema({
     lastVerificationAt : {
         type : Date ,
         required : false
+    },
+    userId : {
+        type : mongoose.Schema.Types.ObjectId,
+        required:true
     }
 },{timestamps : true});
 module.exports = mongoose.model("document",documentSchema);
