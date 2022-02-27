@@ -136,6 +136,10 @@ const docList = [{
 let currdoc = 'docpurpose0'
 
 window.onload = (event) => {
+    listofdoc()
+}
+
+function listofdoc() {
     let innerHTM = ''
     for (let i = 0; i < docList.length; i++) {
         let temp = `<div id="docpurpose${i}" onclick="docClick(${i})" class="cardlist">
@@ -175,10 +179,21 @@ function addFieldClick(type) {
     let t = document.getElementById(type)
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Field'
+        listofdoc()
     } else {
         t.innerHTML = 'Save Changes'
         console.log(t)
-        let innerHTM = '';
+        let innerHTM = `<div class="cardlist inpt">
+                            Field name :  <br>
+                            <input type="text">
+                        </div>
+                        <div class="cardlist inpt">
+                            Field type :  <br>
+                            <input type="text">
+                        </div>`;
+        let temp1 = document.getElementById('docfieldId')
+        temp1.innerHTML = innerHTM
+
     }
 }
 
@@ -186,10 +201,17 @@ function adddocClick(type) {
     let t = document.getElementById(type)
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Document'
+
+        listofdoc()
     } else {
         t.innerHTML = 'Save Changes'
         console.log(t)
-        let innerHTM = '';
+        let innerHTM = `<div class="cardlist inpt">
+                            Type of Document :  <br>
+                            <input type="text">
+                        </div>`;
+        let temp1 = document.getElementById('docListId')
+        temp1.innerHTML = innerHTM
 
     }
 }
