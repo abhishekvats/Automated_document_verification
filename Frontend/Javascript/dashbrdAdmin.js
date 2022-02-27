@@ -1,148 +1,160 @@
-const docList = [{
-        docPurpose: 'Rashan Card',
-        fieldsToVerify: [{
-                fieldName: "Name",
-                fieldType: "text"
-            },
-            {
-                fieldName: "Age",
-                fieldType: "number"
-            },
-            {
-                fieldName: "Date of birth",
-                fieldType: "text"
-            }
-        ]
+let docList = [{
+    docPurpose: 'Rashan Card',
+    fieldsToVerify: [{
+        fieldName: "Name",
+        fieldType: "text"
     },
     {
-        docPurpose: 'Adhar Card',
-        fieldsToVerify: [{
-                fieldName: "Name",
-                fieldType: "text"
-            },
-            {
-                fieldName: "Age",
-                fieldType: "number"
-            },
-            {
-                fieldName: "Date of birth",
-                fieldType: "text"
-            },
-            {
-                fieldName: "Address",
-                fieldType: "text"
-            },
-            {
-                fieldName: "Adhar Number",
-                fieldType: "number"
-            }
-        ]
-    }, {
-        docPurpose: 'Pan Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
+        fieldName: "Age",
+        fieldType: "number"
     },
     {
-        docPurpose: 'Lan Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
-    }, {
-        docPurpose: 'Rashan Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
-    },
-    {
-        docPurpose: 'Adhar Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
-    }, {
-        docPurpose: 'Pan Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
-    },
-    {
-        docPurpose: 'Lan Card',
-        fieldsToVerify: [{
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            },
-            {
-                fieldName: "field namename",
-                fieldType: "text"
-            }
-        ]
+        fieldName: "Date of birth",
+        fieldType: "text"
     }
+    ]
+},
+{
+    docPurpose: 'Adhar Card',
+    fieldsToVerify: [{
+        fieldName: "Name",
+        fieldType: "text"
+    },
+    {
+        fieldName: "Age",
+        fieldType: "number"
+    },
+    {
+        fieldName: "Date of birth",
+        fieldType: "text"
+    },
+    {
+        fieldName: "Address",
+        fieldType: "text"
+    },
+    {
+        fieldName: "Adhar Number",
+        fieldType: "number"
+    }
+    ]
+}, {
+    docPurpose: 'Pan Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+},
+{
+    docPurpose: 'Lan Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+}, {
+    docPurpose: 'Rashan Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+},
+{
+    docPurpose: 'Adhar Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+}, {
+    docPurpose: 'Pan Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+},
+{
+    docPurpose: 'Lan Card',
+    fieldsToVerify: [{
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    },
+    {
+        fieldName: "field namename",
+        fieldType: "text"
+    }
+    ]
+}
 ]
-
 let currdoc = 'docpurpose0'
-
+let latestIndex = 0;
 window.onload = (event) => {
-    listofdoc()
+    fetch("http://localhost:8080/getRules", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            docList = data.rules;
+            listofdoc();
+        })
+
 }
 
 function listofdoc() {
     let innerHTM = ''
     for (let i = 0; i < docList.length; i++) {
-        let temp = `<div id="docpurpose${i}" onclick="docClick(${i})" class="cardlist">
+        let temp = `<div id="docpurpose${i}" onclick="docClick(${i})" class="cardlist" data-index="${i}">
         ${docList[i].docPurpose}</div>`
         innerHTM += temp
     }
@@ -159,7 +171,7 @@ function docClick(index) {
     let curr = document.getElementById(currdoc)
     console.log(curr)
     curr.classList.remove('currdoc')
-
+    latestIndex = index;
     currdoc = 'docpurpose' + index
 
     curr = document.getElementById(currdoc)
@@ -177,6 +189,27 @@ function docClick(index) {
 
 function addFieldClick(type) {
     let t = document.getElementById(type)
+    if (t.innerText === "Save Changes") {
+        fetch("http://localhost:8080/updateRule", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                id:docList[latestIndex]._id,
+                fields: {
+                    fieldName : document.getElementById("fieldName").value,
+                    fieldType : document.getElementById("fieldType").value
+                }
+            })
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+
+            })
+    }
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Field'
         listofdoc()
@@ -185,11 +218,11 @@ function addFieldClick(type) {
         console.log(t)
         let innerHTM = `<div class="cardlist inpt">
                             Field name :  <br>
-                            <input type="text" id="docPurpose">
+                            <input type="text" id="fieldName">
                         </div>
                         <div class="cardlist inpt">
                             Field type :  <br>
-                            <input type="text">
+                            <input type="text" id="fieldType">
                         </div>`;
         let temp1 = document.getElementById('docfieldId')
         temp1.innerHTML = innerHTM
@@ -198,7 +231,27 @@ function addFieldClick(type) {
 }
 
 function adddocClick(type) {
-    let t = document.getElementById(type)
+    let t = document.getElementById(type);
+    if (t.innerText === "Save Changes") {
+        fetch("http://localhost:8080/addrule", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                docPurpose: document.getElementById("docPurpose").value,
+                fields: []
+            })
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                docList.push(data);
+                console.log(docList);
+                listofdoc();
+            })
+    }
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Document'
 
@@ -217,20 +270,4 @@ function adddocClick(type) {
     // if(t.innerHTML === 'Save Changes'){
     //     return;
     // }
-    fetch("http://localhost:8080/addrule",{
-        method: "POST",
-        headers:{
-            "Content-Type":"application/json",
-            "Authorization":"Bearer "+localStorage.getItem("token")
-        },
-        body:JSON.stringify({
-            docPurpose : document.getElementById("docPurpose").value,
-            fields : []
-        })
-    })
-    .then(res => res.json())
-    .then((data) => {
-        console.log(data);
-        docList.push(...data);
-    })
 }

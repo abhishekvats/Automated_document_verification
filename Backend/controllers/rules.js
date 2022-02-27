@@ -49,3 +49,10 @@ exports.updateRule=(req,res,body)=>{
         })
     }
 }
+exports.getRules = async (req,res,next) => {
+    const rules = await Rule.find();
+    return res.status(200).json({
+        message : "success",
+        rules : rules
+    })
+}

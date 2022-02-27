@@ -21,8 +21,8 @@
 const path = require("path");
 const aws = require("aws-sdk");
 aws.config.update({
-  secretAccessKey : "fTOASGpC8ZswNFt6JCD4UJbBDEWz2w+TcXyvdqWU",
-  accessKeyId: "AKIAWZTTNVWRHABDP75A",
+  secretAccessKey : "",
+  accessKeyId: "",
   region : "us-east-2"
 });
 const fs = require("fs");

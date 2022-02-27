@@ -153,7 +153,7 @@ function listofdoc() {
         <div>
                         ${alpha[i].fieldName} :</div>
                         <div>
-                        <input ${alpha[i].fieldType=='file'?"class='custom-file-input'":''} type="${alpha[i].fieldType}">
+                        <input ${alpha[i].fieldType=='file'?"class='custom-file-input' id='myfile'":''} type="${alpha[i].fieldType}">
                         </div>
                     </div>`
         innerHTM += temp
@@ -163,5 +163,21 @@ function listofdoc() {
 }
 
 function typedoc2() {
-    window.location.href = 'userServiceListOutput.html'
+    console.log("hello")
+    let formData = new FormData();
+    formData.append("docPurpose",docList[localStorage.getItem('userFormIndex')].docPurpose);
+    formData.append("ruleId",docList[localStorage.getItem('userFormIndex')]._id);
+    formData.append("doc",document.getElementById("myfile").files[0]);
+    fetch("http://localhost:8080/uploadDocument",{
+        method : "POST",
+        headers : {
+            "Authorization":"Bearer "+ localStorage.getItem("token")
+        },
+        body : formData
+    })
+    .then(res => res.json())
+    .then((data) => {
+        console.log(data);
+        // window.location.href = 'userServiceListOutput.html';
+    })
 }
