@@ -22,3 +22,12 @@ document.getElementById("signup").addEventListener("click",(event) => {
         document.getElementById("su").style.zIndex = -1;
     })
 })
+document.getElementById("signin-toggle").addEventListener("click",(event) => {
+    // event.preventDefault();
+    console.log()
+    document.getElementById("su").style.zIndex = -1;
+})
+document.getElementById("signup-toggle").addEventListener("click",(event) => {
+    // event.preventDefault();
+    document.getElementById("su").style.zIndex = 10;
+})
