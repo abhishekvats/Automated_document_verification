@@ -15,7 +15,8 @@ body {
     min-width: 300px;
     max-width: 500px;
     min-height: 500px;
-    background-color: rgb(58, 132, 202);
+    /* background-color: rgb(58, 132, 202); */
+    background-color: rgb(243, 243, 243);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -70,6 +71,17 @@ body {
     transform: scale(1.1);
     color: white;
 }
+.btn_signin_part{
+    background-color: rgb(138, 177, 221);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: transform .1s ease-in-out;
+}
+.btn_signin_part:hover{
+    background-color: rgb(62, 121, 189);
+    transform: scale(1.02);
+}
 form{
     /* background-color: black; */
     margin: 0px 4rem;
@@ -77,8 +89,11 @@ form{
 .signUp_part{
     position: absolute;
     z-index: -1;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
+    background-color: rgb(243, 243, 243);
+    
 }
+
 .signin_UP{
 
     background-color: rgb(255, 255, 255);
