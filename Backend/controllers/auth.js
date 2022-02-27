@@ -55,14 +55,15 @@ exports.login = async (req,res,next) => {
             },"ieiuuirdjdfjidfuiu");
             return res.status(200).json({
                 message : "success",
-                token : token
+                token : token,
+                user : user
             });
         }else{
             throw new Error("incorrect password");
         }
     } catch (error) {
         return res.status(500).json({
-            message : error.message
+            message : error.message,
         })
     }
 }
