@@ -1,4 +1,5 @@
-document.getElementById("signup").addEventListener("click",() => {
+document.getElementById("signup").addEventListener("click",(event) => {
+    event.preventDefault();
     let email = document.getElementById("email-signup").value;
     let password = document.getElementById("password-signup").value;
     let name = document.getElementById("name").value;
