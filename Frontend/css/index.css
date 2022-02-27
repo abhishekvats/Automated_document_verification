@@ -1,9 +1,13 @@
-*{
+* {
     font-family: 'Mochiy Pop P One', sans-serif;
     font-family: 'Varela Round', sans-serif;
 }
+
 body {
     margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     /* display: flex;
     justify-content: center;
     align-items: center;
@@ -12,31 +16,49 @@ body {
     flex-direction: column; */
     /* justify-content: space-evenly; */
 }
-.header_main{
-    width: 100%;
-    height: 2rem;
+
+.header_main {
+    width: 100vw;
+    height: 18vh;
     background-color: rgb(36, 110, 207);
-    padding: 5rem 0rem;
+    /* padding: 2vh 0rem; */
     color: white;
     font-size: 2rem;
     text-align: center;
     font: 900;
+    line-height: 18vh;
     /* margin-bottom: 1rem; */
 }
-.body-container{
+
+@media only screen and (max-width: 520px) {
+    .header_main {
+        line-height: 9vh;
+    }
+}
+
+.body-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 79vh;
+    /* height: 100vh; */
+    /* height: 79vh; */
+    height: 82vh;
     flex-direction: column;
 }
+
 .main {
-    /* margin-top: 1rem; */
-    margin-bottom: 4rem;
-    min-width: 400px;
-    max-width: 500px;
-    min-height: 500px;
+    margin: 10px;
+    padding: 10px;
+    /* padding: 2rem 0rem; */
+    /* margin-bottom: 4rem; */
+    /* min-width: 400px;
+    max-width: 500px; */
+    width: 400px;
+    /* width: 300px; */
+    max-width: 400px;
+    /* min-height: 500px; */
+    height: 75vh;
     background-color: rgb(58, 132, 202);
     border-radius: 20px;
     display: flex;
@@ -45,7 +67,6 @@ body {
     justify-content: space-evenly;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
-
 
 .headder {
     width: 100%;
@@ -57,57 +78,58 @@ body {
     justify-content: space-evenly;
 }
 
-.color{
+.color {
     color: white;
 }
-.admin{
-    /* background-color: rgb(138, 177, 221); */
-    /* background-color: rgb(255, 255, 255); */
-    border-radius: 10px;
-    margin: 10px 0px 0px 10px;
-    width: 10.5rem;
-    height: 10.5rem;
-    line-height: 2.5rem;
-    text-align: center;
-    transition: transform .1s ease-in-out;
-    /* color: white; */
-}
-/* .signin:hover{
-    background-color: aqua;
-    transform: scale(1.1);
-} */
 
-.user{
-    /* background-color: rgb(138, 177, 221); */
+.admin {
     border-radius: 10px;
-    margin: 10px 0px 0px 5px;
+    width: 10.5rem;
     line-height: 2.5rem;
     text-align: center;
-    width: 10.5rem;
-    height: 10.5rem;
     transition: transform .1s ease-in-out;
-    color: white;
 }
-.signup:hover{
+
+.user {
+    border-radius: 10px;
+    width: 10.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    transition: transform .1s ease-in-out;
+}
+
+img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.signup:hover {
     background-color: blueviolet;
     transform: scale(1.1);
     color: white;
 }
-img{
+
+img {
     border: 5px solid rgb(8, 64, 90);
     border-radius: 10px;
     padding: 10px;
     transition: transform .1s ease-in-out;
 }
-img:hover{
+
+img:hover {
     transform: scale(1.02);
 }
-p{
+
+.pi {
     color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
 }
-p:hover{
-    color: rgb(11, 87, 138);
+
+.pi:hover {
+    color: rgba(255, 255, 255, 0.438)
 }
-#a{
+
+#a {
     text-decoration: none;
 }

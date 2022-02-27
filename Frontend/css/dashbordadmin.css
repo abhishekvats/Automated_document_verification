@@ -26,15 +26,17 @@
 
 .card {
     width: 400px;
-    min-height: 300px;
+    min-height: 30px;
     /* min-width: 200px; */
     background-color: rgb(243, 243, 243);
     margin: 50px;
     border-radius: 20px;
+    height: 85vh;
     display: flex;
     /* justify-content: center; */
     align-items: center;
     padding-bottom: 15px;
+    transition: all 1s ease;
 }
 
 .card>.head {
@@ -93,4 +95,20 @@ select:focus {
     height: 70%;
     border: 0px solid black;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 840px) {
+    .card {
+        margin: 50px 10px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .card {
+        min-width: none;
+        margin: 10px 10px;
+    }
+    .main {
+        flex-direction: column;
+    }
 }
