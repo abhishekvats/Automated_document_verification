@@ -20,20 +20,13 @@ let storage = multer.diskStorage({
         cb(null,path.join(__dirname,"images"));
     },
     filename : (req,file,cb) => {
-        cb(null,file.originalname + new Date().getTime());
+        cb(null,new Date().getTime() + file.originalname );
     }
 });
 app.use(multer({
     storage : storage,
     limits : {
         fileSize : 52428800 // 50 MB max upload size
-    },
-    fileFilter:(req,file,cb) => {
-        if(file.mimetype === "pdf" || file.mimetype === "png" ||file.mimetype === "jpg" || file.mimetype === "jpeg"){
-            cb(null,true);
-        }else {
-            cb(new Error("your document has invalid mimetype"));
-        }
     }
 }).single("doc"));
 // app.use(express.static(path.join(__dirname,"public")));
@@ -53,6 +46,8 @@ app.post("/addrule",authVerify,rulesController.addRule);
 app.delete("/deleteRule",authVerify,rulesController.deleteRule);
 
 app.put("/updateRule",authVerify,rulesController.updateRule);
+
+app.get("/getRules",authVerify,rulesController.getRules);
 mongoose.connect('mongodb+srv://avenger:CwPyURjW3wJABQMD@cluster0.lhtgd.mongodb.net/docVerify?retryWrites=true&w=majority')
 .then((result) => {
     console.log("connected");
