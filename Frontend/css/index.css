@@ -38,6 +38,7 @@ body {
 
 .main {
     margin-top: 4rem;
+    padding: 2rem 0rem;
     /* margin-bottom: 4rem; */
     min-width: 400px;
     max-width: 500px;
@@ -115,10 +116,12 @@ img:hover {
 
 p {
     color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
 p:hover {
-    color: rgb(11, 87, 138);
+    color: rgba(255, 255, 255, 0.438)
 }
 
 #a {
