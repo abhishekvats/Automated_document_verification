@@ -12,16 +12,16 @@ body {
 }
 
 .main {
-    min-width: 300px;
+    min-width: 400px;
     max-width: 500px;
     min-height: 500px;
     /* background-color: rgb(58, 132, 202); */
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(243, 242, 242);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
@@ -31,21 +31,25 @@ body {
     height: 100px;
     display: flex;
     flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .color{
-    color: white;
+    color: black;
 }
 .signin {
     /* background-color: rgb(138, 177, 221); */
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(62, 121, 189);
     border-radius: 10px;
     margin: 10px 0px 0px 10px;
-    width: 4.5rem;
+    width: 45%;
     height: 2.5rem;
     line-height: 2.5rem;
     text-align: center;
     transition: transform .1s ease-in-out;
+    color:white;
     /* color: white; */
 }
 /* .signin:hover{
@@ -54,29 +58,31 @@ body {
 } */
 
 .signup {
-    background-color: rgb(138, 177, 221);
+    background-color: white;
     border-radius: 10px;
     margin: 10px 0px 0px 5px;
     line-height: 2.5rem;
     text-align: center;
-    width: 4rem;
+    width: 45%;
     height: 2.5rem;
     transition: transform .1s ease-in-out;
-    color: white;
+    color: black;
 
 
 }
 .signup:hover{
     background-color: blueviolet;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     color: white;
 }
 .btn_signin_part{
-    background-color: rgb(138, 177, 221);
+    background-color: rgb(62, 121, 189);
     border: none;
     color: white;
     border-radius: 5px;
     transition: transform .1s ease-in-out;
+    width: 100px;
+    height : 40px;
 }
 .btn_signin_part:hover{
     background-color: rgb(62, 121, 189);
@@ -90,45 +96,47 @@ form{
     position: absolute;
     z-index: -1;
     /* background-color: blueviolet; */
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(243, 242, 242);
     
 }
 
 .signin_UP{
 
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px 0px 0px 5px;
     line-height: 2.5rem;
     text-align: center;
     width: 4rem;
     height: 2.5rem;
     transition: transform .1s ease-in-out;
+    width: 45%;
 }
 .signin_UP:hover{
     background-color: rgb(58, 132, 202);
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     color: white;
 }
 .signup_UP {
-    background-color: rgb(171, 118, 221);
-
+    background-color: blueviolet;
+    width: 45%;
     border-radius: 10px;
     margin: 10px 0px 0px 5px;
     text-align: center;
     color: white;
-    width: 4.5rem;
     height: 2.5rem;
     line-height: 2.5rem;
 
 
 }
 .btn_signup_part{
-    background-color: rgb(86, 5, 161);
+    background-color: blueviolet;
     border: none;
     color: white;
     border-radius: 5px;
     transition: transform .1s ease-in-out;
+    width: 100px;
+    height : 40px;
 }
 .btn_signup_part:hover{
     transform: scale(1.1);
