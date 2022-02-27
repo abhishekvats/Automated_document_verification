@@ -24,7 +24,7 @@ document.getElementById("signup").addEventListener("click",(event) => {
 })
 document.getElementById("signin-toggle").addEventListener("click",(event) => {
     // event.preventDefault();
-    console.log()
+    console.log("kkkk")
     document.getElementById("su").style.zIndex = -1;
 })
 document.getElementById("signup-toggle").addEventListener("click",(event) => {
