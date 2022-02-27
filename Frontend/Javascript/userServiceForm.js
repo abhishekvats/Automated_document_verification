@@ -149,15 +149,24 @@ function listofdoc() {
     let alpha = docList[localStorage.getItem('userFormIndex')].fieldsToVerify
     console.log(alpha)
     for (let i = 0; i < alpha.length; i++) {
-        let temp = `<div class="cardlist part2">
+        let temp = `<div class="cardlist part2 ${alpha[i].fieldType==='file'?'inputupdate':''}">
         <div>
                         ${alpha[i].fieldName} :</div>
                         <div>
-                        <input ${alpha[i].fieldType=='file'?"class='custom-file-input' id='myfile'":''} type="${alpha[i].fieldType}">
+                        <input ${alpha[i].fieldType==='file'?"class='custom-file-input' id='myfile'":''} type="${alpha[i].fieldType}">
                         </div>
                     </div>`
         innerHTM += temp
     }
+    let temp = `<div class="cardlist inputupdate">
+    <div>Upload Document :
+        <input class="" type="file"></div>
+
+    <div style="border: 1px rgb(168, 168, 168) solid;" onclick="" class="cardlist">
+        Submit
+    </div>
+</div>`
+    innerHTM += temp
     let temp1 = document.getElementById('docListformId')
     temp1.innerHTML = (innerHTM)
 }
@@ -165,19 +174,19 @@ function listofdoc() {
 function typedoc2() {
     console.log("hello")
     let formData = new FormData();
-    formData.append("docPurpose",docList[localStorage.getItem('userFormIndex')].docPurpose);
-    formData.append("ruleId",docList[localStorage.getItem('userFormIndex')]._id);
-    formData.append("doc",document.getElementById("myfile").files[0]);
-    fetch("http://localhost:8080/uploadDocument",{
-        method : "POST",
-        headers : {
-            "Authorization":"Bearer "+ localStorage.getItem("token")
-        },
-        body : formData
-    })
-    .then(res => res.json())
-    .then((data) => {
-        console.log(data);
-        // window.location.href = 'userServiceListOutput.html';
-    })
+    formData.append("docPurpose", docList[localStorage.getItem('userFormIndex')].docPurpose);
+    formData.append("ruleId", docList[localStorage.getItem('userFormIndex')]._id);
+    formData.append("doc", document.getElementById("myfile").files[0]);
+    fetch("http://localhost:8080/uploadDocument", {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+            body: formData
+        })
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+            // window.location.href = 'userServiceListOutput.html';
+        })
 }
