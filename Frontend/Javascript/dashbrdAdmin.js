@@ -133,6 +133,10 @@ const docList = [{
     }
 ]
 
+<<<<<<< HEAD
+function typedoc() {
+    window.location.href = "./userServiceList.html";
+=======
 let currdoc = 'docpurpose0'
 
 window.onload = (event) => {
@@ -203,4 +207,5 @@ function adddocClick(type) {
         temp1.innerHTML = innerHTM
 
     }
+>>>>>>> db2707021ff391650fee34fafcd109bd59ffe010
 }
