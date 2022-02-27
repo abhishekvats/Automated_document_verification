@@ -136,7 +136,7 @@ let docList = [{
     }
 ]
 
-
+let docId ;
 window.onload = (event) => {
     fetch("http://localhost:8080/getRules", {
             method: "GET",
@@ -173,29 +173,50 @@ function listofdoc() {
     }
     let temp = `<div class="cardlist inputupdate">
     <div>Upload Document :
-        <input class="" type="file"></div>
+        <input class="" type="file" id="myfile"></div>
 
-    <div style="border: 1px rgb(168, 168, 168) solid;" onclick="" class="cardlist">
-        Submit
+    <div style="border: 1px rgb(168, 168, 168) solid;" id="myfileUpload" class="cardlist" >
+        Upload
     </div>
 </div>`
     innerHTM += temp
     let temp1 = document.getElementById('docListformId')
     temp1.innerHTML = (innerHTM)
+    document.getElementById("myfileUpload")
+.addEventListener("click",function typedoc2(event) {
+    // event.preventDefault();
+    // console.log("hello")
+    // let formData = new FormData();
+    // formData.append("docPurpose", docList[localStorage.getItem('userFormIndex')].docPurpose);
+    // formData.append("ruleId", docList[localStorage.getItem('userFormIndex')]._id);
+    // formData.append("doc", document.getElementById("myfile").files[0]);
+    // fetch("http://localhost:8080/uploadDocument", {
+    //         method: "POST",
+    //         headers: {
+    //             "Authorization": "Bearer " + localStorage.getItem("token")
+    //         },
+    //         body: formData
+    //     })
+    //     .then(res => res.json())
+    //     .then((data) => {
+    //         console.log(data);
+    //         docId = data.docData._id;
+    //         // window.location.href = 'userServiceListOutput.html';
+    //     })
+});
 }
 
-function typedoc2() {
-    console.log("hello")
-    let formData = new FormData();
-    formData.append("docPurpose", docList[localStorage.getItem('userFormIndex')].docPurpose);
-    formData.append("ruleId", docList[localStorage.getItem('userFormIndex')]._id);
-    formData.append("doc", document.getElementById("myfile").files[0]);
-    fetch("http://localhost:8080/uploadDocument", {
+
+function verifyDoc() {
+    fetch("http://localhost:8080/verifyDocument", {
             method: "POST",
             headers: {
+                "Content-Type":"application/json",
                 "Authorization": "Bearer " + localStorage.getItem("token")
             },
-            body: formData
+            body: JSON.stringify({
+              docId : docId  
+            })
         })
         .then(res => res.json())
         .then((data) => {

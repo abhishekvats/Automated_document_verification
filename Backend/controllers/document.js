@@ -1,6 +1,14 @@
 const document = require("../models/document");
 const rule = require("../models/rules");
 let {imgRecog} = require("../imgRecognize");
+const testingData = [
+    {
+        Name:"Bhanu Arora",   
+    },
+    {
+        EnrollmentNo : "05910102819"
+    }
+];
 exports.uploadADocument = async (req,res,next) => {
     if(!(req.file)){
         return res.status(400).json({
@@ -18,7 +26,8 @@ exports.uploadADocument = async (req,res,next) => {
     });
     await docData.save();
     return res.status(200).json({
-        message : "upload success"
+        message : "upload success",
+        docData : docData
     });
 }
 exports.verifyDocument = async (req,res,next) => {
@@ -39,7 +48,7 @@ exports.verifyDocument = async (req,res,next) => {
             // verification using text;
             let str = await imgRecog(docData.docUrl);
             const reg1 = new RegExp(field.fieldName,"i");
-            const reg2 = new RegExp("Bhanu Arora","i");
+            const reg2 = new RegExp(testingData[i][field.fieldName],"i");
             if(!(str.match(reg1) && str.match(reg2))){
                 fieldsNotValid.push({
                     fieldName : field.fieldName,

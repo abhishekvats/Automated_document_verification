@@ -30,7 +30,7 @@ const textRact = new aws.Textract({region : "us-east-2"});
 
 exports.imgRecog = (imageName) => {
   return new Promise((resolve,reject) => {
-    fs.readFile(path.join(__dirname , "public", "ab.jpeg"),{},(err,data) => {
+    fs.readFile(path.join(__dirname , "public", imageName),{},(err,data) => {
       if(err){
         console.log(err);
         return err;

@@ -48,6 +48,8 @@ app.delete("/deleteRule",authVerify,rulesController.deleteRule);
 app.put("/updateRule",authVerify,rulesController.updateRule);
 
 app.get("/getRules",authVerify,rulesController.getRules);
+
+app.get("/getUserDocs",authVerify,docController.getUserDocs);
 mongoose.connect('mongodb+srv://avenger:CwPyURjW3wJABQMD@cluster0.lhtgd.mongodb.net/docVerify?retryWrites=true&w=majority')
 .then((result) => {
     console.log("connected");
