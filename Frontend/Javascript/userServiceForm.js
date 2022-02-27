@@ -185,24 +185,28 @@ function listofdoc() {
     document.getElementById("myfileUpload")
 .addEventListener("click",function typedoc2(event) {
     // event.preventDefault();
-    // console.log("hello")
-    // let formData = new FormData();
-    // formData.append("docPurpose", docList[localStorage.getItem('userFormIndex')].docPurpose);
-    // formData.append("ruleId", docList[localStorage.getItem('userFormIndex')]._id);
-    // formData.append("doc", document.getElementById("myfile").files[0]);
-    // fetch("http://localhost:8080/uploadDocument", {
-    //         method: "POST",
-    //         headers: {
-    //             "Authorization": "Bearer " + localStorage.getItem("token")
-    //         },
-    //         body: formData
-    //     })
-    //     .then(res => res.json())
-    //     .then((data) => {
-    //         console.log(data);
-    //         docId = data.docData._id;
-    //         // window.location.href = 'userServiceListOutput.html';
-    //     })
+    console.log("hello")
+    let formData = new FormData();
+    formData.append("docPurpose", docList[localStorage.getItem('userFormIndex')].docPurpose);
+    formData.append("ruleId", docList[localStorage.getItem('userFormIndex')]._id);
+    formData.append("doc", document.getElementById("myfile").files[0]);
+    let abortController = new AbortController();
+    window.onbeforeunload = function(e) { abortController.abort(); };
+    fetch("http://localhost:8080/uploadDocument", {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
+            body: formData,
+            signal : abortController.signal
+        })
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+            docId = data.docData._id;
+            localStorage.setItem("docId",data.docData._id);
+            verifyDoc();
+        })
 });
 }
 
@@ -215,12 +219,12 @@ function verifyDoc() {
                 "Authorization": "Bearer " + localStorage.getItem("token")
             },
             body: JSON.stringify({
-              docId : docId  
+              docId : localStorage.getItem("docId") 
             })
         })
         .then(res => res.json())
         .then((data) => {
             console.log(data);
-            // window.location.href = 'userServiceListOutput.html';
+            window.location.href = 'userServiceListOutput.html';
         })
 }
