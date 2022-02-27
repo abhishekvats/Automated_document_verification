@@ -24,3 +24,12 @@
     content: 'Select some files';
     /* visibility: hidden; */
 }
+
+.inputupdate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    height: 8rem!important;
+}
