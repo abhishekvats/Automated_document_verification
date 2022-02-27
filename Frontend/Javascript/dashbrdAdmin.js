@@ -133,9 +133,6 @@ const docList = [{
     }
 ]
 
-function typedoc() {
-    window.location.href = "./userServiceList.html";
-}
 let currdoc = 'docpurpose0'
 
 window.onload = (event) => {
