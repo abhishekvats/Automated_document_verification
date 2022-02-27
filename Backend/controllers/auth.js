@@ -26,7 +26,11 @@ exports.signup = async (req,res,next) => {
             userType : userType
         });
         await newUser.save();
+        return res.status(200).json({
+            message : "user created"
+        })
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
             message : error.message
         })
@@ -53,6 +57,8 @@ exports.login = async (req,res,next) => {
                 message : "success",
                 token : token
             });
+        }else{
+            throw new Error("incorrect password");
         }
     } catch (error) {
         return res.status(500).json({
