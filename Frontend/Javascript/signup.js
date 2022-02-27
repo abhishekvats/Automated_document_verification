@@ -12,7 +12,7 @@ document.getElementById("signup").addEventListener("click",(event) => {
             email : email,
             name : name,
             password : password,
-            userType : "Officer"
+            userType : localStorage.getItem("userType")
         })
     })
     .then(res => res.json())

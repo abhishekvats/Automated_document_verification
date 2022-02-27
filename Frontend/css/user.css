@@ -6,3 +6,10 @@
 .content {
     height: 100%;
 }
+
+.part2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 75px;
+    flex-direction: row;
+}
