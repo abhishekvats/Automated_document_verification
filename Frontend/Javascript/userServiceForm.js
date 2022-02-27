@@ -139,19 +139,18 @@ window.onload = (event) => {
 }
 
 function listofdoc() {
+    console.log(localStorage.getItem('userFormIndex'))
     let innerHTM = ''
-    for (let i = 0; i < docList.length; i++) {
-        let temp = `<div onclick="typedoc(${i})" class="cardlist part2">
-                        <div class="one">${docList[i].docPurpose}</div>
-                        <div class="two">Apply Now</div>
+    document.querySelector('.head').innerHTML = docList[localStorage.getItem('userFormIndex')].docPurpose
+
+    let alpha = docList[localStorage.getItem('userFormIndex')].fieldsToVerify
+    for (let i = 0; i < alpha.length; i++) {
+        let temp = `<div class="cardlist">
+                        ${alpha.fieldName} : &emsp;
+                        <input type="${fieldType}">
                     </div>`
         innerHTM += temp
     }
-    let temp1 = document.getElementById('docListId')
+    let temp1 = document.getElementById('docListformId')
     temp1.innerHTML = (innerHTM)
-}
-
-function typedoc(index) {
-    localStorage.setItem("userFormIndex", index);
-    window.location.href = "./userServiceList.html";
 }
