@@ -182,10 +182,21 @@ function addFieldClick(type) {
     let t = document.getElementById(type)
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Field'
+        listofdoc()
     } else {
         t.innerHTML = 'Save Changes'
         console.log(t)
-        let innerHTM = '';
+        let innerHTM = `<div class="cardlist inpt">
+                            Field name :  <br>
+                            <input type="text">
+                        </div>
+                        <div class="cardlist inpt">
+                            Field type :  <br>
+                            <input type="text">
+                        </div>`;
+        let temp1 = document.getElementById('docfieldId')
+        temp1.innerHTML = innerHTM
+
     }
 }
 
