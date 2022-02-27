@@ -1,7 +1,8 @@
-*{
+* {
     font-family: 'Mochiy Pop P One', sans-serif;
     font-family: 'Varela Round', sans-serif;
 }
+
 body {
     margin: 0px;
     /* display: flex;
@@ -12,9 +13,10 @@ body {
     flex-direction: column; */
     /* justify-content: space-evenly; */
 }
-.header_main{
+
+.header_main {
     width: 100%;
-    height: 2rem;
+    height: 10vh;
     background-color: rgb(36, 110, 207);
     padding: 5rem 0rem;
     color: white;
@@ -23,14 +25,16 @@ body {
     font: 900;
     /* margin-bottom: 1rem; */
 }
-.body-container{
+
+.body-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 79vh;
+    height: 100vh;
     flex-direction: column;
 }
+
 .main {
     /* margin-top: 1rem; */
     margin-bottom: 4rem;
@@ -46,7 +50,6 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-
 .headder {
     width: 100%;
     height: 30rem;
@@ -57,10 +60,11 @@ body {
     justify-content: space-evenly;
 }
 
-.color{
+.color {
     color: white;
 }
-.admin{
+
+.admin {
     /* background-color: rgb(138, 177, 221); */
     /* background-color: rgb(255, 255, 255); */
     border-radius: 10px;
@@ -72,12 +76,14 @@ body {
     transition: transform .1s ease-in-out;
     /* color: white; */
 }
+
+
 /* .signin:hover{
     background-color: aqua;
     transform: scale(1.1);
 } */
 
-.user{
+.user {
     /* background-color: rgb(138, 177, 221); */
     border-radius: 10px;
     margin: 10px 0px 0px 5px;
@@ -88,26 +94,32 @@ body {
     transition: transform .1s ease-in-out;
     color: white;
 }
-.signup:hover{
+
+.signup:hover {
     background-color: blueviolet;
     transform: scale(1.1);
     color: white;
 }
-img{
+
+img {
     border: 5px solid rgb(8, 64, 90);
     border-radius: 10px;
     padding: 10px;
     transition: transform .1s ease-in-out;
 }
-img:hover{
+
+img:hover {
     transform: scale(1.02);
 }
-p{
+
+p {
     color: white;
 }
-p:hover{
+
+p:hover {
     color: rgb(11, 87, 138);
 }
-#a{
+
+#a {
     text-decoration: none;
 }
