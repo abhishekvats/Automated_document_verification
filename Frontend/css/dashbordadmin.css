@@ -2,6 +2,16 @@
     font-family: 'Mochiy Pop P One', sans-serif;
     font-family: 'Varela Round', sans-serif;
 }
+::-webkit-scrollbar {
+
+    width: 8px;
+    height: 10px;
+
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c2c9d2;
+  }
 .main {
     display: flex;
     justify-content: center;
