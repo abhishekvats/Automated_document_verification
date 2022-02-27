@@ -31,13 +31,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
+    /* height: 79vh; */
     flex-direction: column;
 }
 
 .main {
-    /* margin-top: 1rem; */
-    margin-bottom: 4rem;
+    margin-top: 4rem;
+    /* margin-bottom: 4rem; */
     min-width: 400px;
     max-width: 500px;
     min-height: 500px;
