@@ -16,6 +16,7 @@ document.getElementById("login").addEventListener("click", (event) => {
         .then((data) => {
             console.log(data);
             alert(data.message);
-            window.location.href = data.user.userType == "User"?"/Frontend/userServiceList.html":"/Frontend/dashboard.html";
+            localStorage.setItem("token",data.token);
+            window.location.href = data.user.userType == "User"?"/Frontend/userStatus.html":"/Frontend/dashboard.html";
         })
 })
