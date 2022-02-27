@@ -1,17 +1,20 @@
-*{
+* {
     font-family: 'Mochiy Pop P One', sans-serif;
     font-family: 'Varela Round', sans-serif;
 }
+
 body {
     margin: 0px;
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100vw;
-    height: 100vh; */
+    height: 100vh;
 }
 
-.header_main{
+
+/* .header_main {
     width: 100%;
     height: 2rem;
     background-color: rgb(36, 110, 207);
@@ -20,19 +23,49 @@ body {
     font-size: 2rem;
     text-align: center;
     font: 900;
+} */
+
+.header_main {
+    width: 100vw;
+    height: 18vh;
+    background-color: rgb(36, 110, 207);
+    /* padding: 2vh 0rem; */
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font: 900;
+    line-height: 18vh;
     /* margin-bottom: 1rem; */
 }
-.body-container{
+
+@media only screen and (max-width: 520px) {
+    .header_main {
+        line-height: 9vh;
+    }
+}
+
+
+/* .body-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
+    flex-direction: column;
+} */
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* height: 100vh; */
     /* height: 79vh; */
+    height: 82vh;
     flex-direction: column;
 }
 
 .main {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     min-width: 400px;
     max-width: 500px;
     min-height: 500px;
@@ -42,10 +75,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
-
 
 .headder {
     width: 100%;
@@ -57,12 +89,13 @@ body {
     align-items: center;
 }
 
-.color{
+.color {
     color: black;
 }
+
 .signin {
     /* background-color: rgb(138, 177, 221); */
-    background-color: rgb(62, 121, 189);
+    background-color: rgb(36, 110, 207);
     border-radius: 10px;
     margin: 10px 0px 0px 10px;
     width: 45%;
@@ -70,9 +103,11 @@ body {
     line-height: 2.5rem;
     text-align: center;
     transition: transform .1s ease-in-out;
-    color:white;
+    color: white;
     /* color: white; */
 }
+
+
 /* .signin:hover{
     background-color: aqua;
     transform: scale(1.1);
@@ -88,41 +123,42 @@ body {
     height: 2.5rem;
     transition: transform .1s ease-in-out;
     color: black;
-
-
 }
-.signup:hover{
+
+.signup:hover {
     background-color: blueviolet;
     /* transform: scale(1.1); */
     color: white;
 }
-.btn_signin_part{
-    background-color: rgb(62, 121, 189);
+
+.btn_signin_part {
+    background-color: rgb(36, 110, 207);
     border: none;
     color: white;
     border-radius: 5px;
     transition: transform .1s ease-in-out;
     width: 100px;
-    height : 40px;
+    height: 40px;
 }
-.btn_signin_part:hover{
-    background-color: rgb(62, 121, 189);
+
+.btn_signin_part:hover {
+    background-color: rgb(36, 110, 207);
     transform: scale(1.02);
 }
-form{
+
+form {
     /* background-color: black; */
-    margin: 0px 4rem;
+    margin: 0px 4rem 2rem 4rem;
 }
-.signUp_part{
+
+.signUp_part {
     position: absolute;
     z-index: -1;
     /* background-color: blueviolet; */
     background-color: rgb(243, 242, 242);
-    
 }
 
-.signin_UP{
-
+.signin_UP {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin: 10px 0px 0px 5px;
@@ -133,11 +169,13 @@ form{
     transition: transform .1s ease-in-out;
     width: 45%;
 }
-.signin_UP:hover{
-    background-color: rgb(58, 132, 202);
+
+.signin_UP:hover {
+    background-color: rgb(36, 110, 207);
     /* transform: scale(1.1); */
     color: white;
 }
+
 .signup_UP {
     background-color: blueviolet;
     width: 45%;
@@ -147,18 +185,18 @@ form{
     color: white;
     height: 2.5rem;
     line-height: 2.5rem;
-
-
 }
-.btn_signup_part{
+
+.btn_signup_part {
     background-color: blueviolet;
     border: none;
     color: white;
     border-radius: 5px;
     transition: transform .1s ease-in-out;
     width: 100px;
-    height : 40px;
+    height: 40px;
 }
-.btn_signup_part:hover{
+
+.btn_signup_part:hover {
     transform: scale(1.1);
 }

@@ -96,19 +96,3 @@ select:focus {
     border: 0px solid black;
     border-radius: 10px;
 }
-
-@media only screen and (max-width: 840px) {
-    .card {
-        margin: 50px 10px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .card {
-        min-width: none;
-        margin: 10px 10px;
-    }
-    .main {
-        flex-direction: column;
-    }
-}
