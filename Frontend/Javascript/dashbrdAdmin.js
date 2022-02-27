@@ -185,7 +185,7 @@ function addFieldClick(type) {
         console.log(t)
         let innerHTM = `<div class="cardlist inpt">
                             Field name :  <br>
-                            <input type="text">
+                            <input type="text" id="docPurpose">
                         </div>
                         <div class="cardlist inpt">
                             Field type :  <br>
@@ -208,10 +208,29 @@ function adddocClick(type) {
         console.log(t)
         let innerHTM = `<div class="cardlist inpt">
                             Type of Document :  <br>
-                            <input type="text">
+                            <input type="text" id="docPurpose">
                         </div>`;
         let temp1 = document.getElementById('docListId')
         temp1.innerHTML = innerHTM
 
     }
+    // if(t.innerHTML === 'Save Changes'){
+    //     return;
+    // }
+    fetch("http://localhost:8080/addrule",{
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer "+localStorage.getItem("token")
+        },
+        body:JSON.stringify({
+            docPurpose : document.getElementById("docPurpose").value,
+            fields : []
+        })
+    })
+    .then(res => res.json())
+    .then((data) => {
+        console.log(data);
+        docList.push(...data);
+    })
 }

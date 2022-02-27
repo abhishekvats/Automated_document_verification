@@ -53,7 +53,7 @@ app.post("/addrule",authVerify,rulesController.addRule);
 app.delete("/deleteRule",authVerify,rulesController.deleteRule);
 
 app.put("/updateRule",authVerify,rulesController.updateRule);
-mongoose.connect("mongodb+srv://user_01:BChklZsnyMDnvU0J@cluster0.kpq9o.mongodb.net/docVerify?retryWrites=true&w=majority")
+mongoose.connect('mongodb+srv://avenger:CwPyURjW3wJABQMD@cluster0.lhtgd.mongodb.net/docVerify?retryWrites=true&w=majority')
 .then((result) => {
     console.log("connected");
     app.listen(8080);
