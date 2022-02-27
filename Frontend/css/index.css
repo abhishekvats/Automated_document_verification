@@ -5,6 +5,9 @@
 
 body {
     margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     /* display: flex;
     justify-content: center;
     align-items: center;
@@ -15,15 +18,22 @@ body {
 }
 
 .header_main {
-    width: 100%;
-    height: 10vh;
+    width: 100vw;
+    height: 18vh;
     background-color: rgb(36, 110, 207);
-    padding: 5rem 0rem;
+    /* padding: 2vh 0rem; */
     color: white;
     font-size: 2rem;
     text-align: center;
     font: 900;
+    line-height: 18vh;
     /* margin-bottom: 1rem; */
+}
+
+@media only screen and (max-width: 520px) {
+    .header_main {
+        line-height: 9vh;
+    }
 }
 
 .body-container {
@@ -33,16 +43,22 @@ body {
     width: 100vw;
     /* height: 100vh; */
     /* height: 79vh; */
+    height: 82vh;
     flex-direction: column;
 }
 
 .main {
-    margin-top: 4rem;
-    padding: 2rem 0rem;
+    margin: 10px;
+    padding: 10px;
+    /* padding: 2rem 0rem; */
     /* margin-bottom: 4rem; */
-    min-width: 400px;
-    max-width: 500px;
-    min-height: 500px;
+    /* min-width: 400px;
+    max-width: 500px; */
+    width: 400px;
+    /* width: 300px; */
+    max-width: 400px;
+    /* min-height: 500px; */
+    height: 75vh;
     background-color: rgb(58, 132, 202);
     border-radius: 20px;
     display: flex;
@@ -67,34 +83,24 @@ body {
 }
 
 .admin {
-    /* background-color: rgb(138, 177, 221); */
-    /* background-color: rgb(255, 255, 255); */
     border-radius: 10px;
-    margin: 10px 0px 0px 10px;
     width: 10.5rem;
-    height: 10.5rem;
     line-height: 2.5rem;
     text-align: center;
     transition: transform .1s ease-in-out;
-    /* color: white; */
 }
 
-
-/* .signin:hover{
-    background-color: aqua;
-    transform: scale(1.1);
-} */
-
 .user {
-    /* background-color: rgb(138, 177, 221); */
     border-radius: 10px;
-    margin: 10px 0px 0px 5px;
+    width: 10.5rem;
     line-height: 2.5rem;
     text-align: center;
-    width: 10.5rem;
-    height: 10.5rem;
     transition: transform .1s ease-in-out;
-    color: white;
+}
+
+img {
+    width: 10rem;
+    height: 10rem;
 }
 
 .signup:hover {
@@ -114,13 +120,13 @@ img:hover {
     transform: scale(1.02);
 }
 
-p {
+.pi {
     color: white;
     font-weight: 600;
     font-size: 1.6rem;
 }
 
-p:hover {
+.pi:hover {
     color: rgba(255, 255, 255, 0.438)
 }
 
