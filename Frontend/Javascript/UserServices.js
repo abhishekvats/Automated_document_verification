@@ -1,4 +1,4 @@
-const docList = [{
+let docList = [{
         docPurpose: 'Rashan Card',
         fieldsToVerify: [{
                 fieldName: "Name",
@@ -135,7 +135,19 @@ const docList = [{
 
 
 window.onload = (event) => {
-    listofdoc()
+    fetch("http://localhost:8080/getRules", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            docList = data.rules;
+            listofdoc();
+        })
 }
 
 function listofdoc() {
