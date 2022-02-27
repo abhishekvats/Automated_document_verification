@@ -128,6 +128,9 @@ const docList = [{
             {
                 fieldName: "field namename",
                 fieldType: "text"
+            }, {
+                fieldName: "checker",
+                fieldType: "file"
             }
         ]
     }
@@ -150,11 +153,15 @@ function listofdoc() {
         <div>
                         ${alpha[i].fieldName} :</div>
                         <div>
-                        <input type="${alpha[i].fieldType}">
+                        <input ${alpha[i].fieldType=='file'?"class='custom-file-input'":''} type="${alpha[i].fieldType}">
                         </div>
                     </div>`
         innerHTM += temp
     }
     let temp1 = document.getElementById('docListformId')
     temp1.innerHTML = (innerHTM)
+}
+
+function typedoc2() {
+    window.location.href = 'userServiceListOutput.html'
 }
