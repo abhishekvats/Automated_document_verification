@@ -190,7 +190,7 @@ function adddocClick(type) {
     let t = document.getElementById(type)
     if (t.innerText == 'Save Changes') {
         t.innerHTML = 'Add New Document'
-        t.
+
         listofdoc()
     } else {
         t.innerHTML = 'Save Changes'
