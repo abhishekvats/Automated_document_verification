@@ -17,3 +17,10 @@
 .part2>div>input {
     width: 15rem!important;
 }
+
+.custom-file-input {
+    cursor: pointer;
+    height: 2.5rem!important;
+    content: 'Select some files';
+    /* visibility: hidden; */
+}
