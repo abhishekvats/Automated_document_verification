@@ -1,8 +1,19 @@
 .card {
     width: 700px;
-    height: 600px;
+    height: 87vh;
 }
 
 .content {
     height: 100%;
+}
+
+.part2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8%;
+    flex-direction: row;
+}
+
+.part2>div>input {
+    width: 15rem!important;
 }
