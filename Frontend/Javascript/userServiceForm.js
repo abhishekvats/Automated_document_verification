@@ -26,7 +26,7 @@ const docList = [{
             },
             {
                 fieldName: "Date of birth",
-                fieldType: "text"
+                fieldType: "date"
             },
             {
                 fieldName: "Address",
@@ -144,10 +144,14 @@ function listofdoc() {
     document.querySelector('.head').innerHTML = docList[localStorage.getItem('userFormIndex')].docPurpose
 
     let alpha = docList[localStorage.getItem('userFormIndex')].fieldsToVerify
+    console.log(alpha)
     for (let i = 0; i < alpha.length; i++) {
-        let temp = `<div class="cardlist">
-                        ${alpha.fieldName} : &emsp;
-                        <input type="${fieldType}">
+        let temp = `<div class="cardlist part2">
+        <div>
+                        ${alpha[i].fieldName} :</div>
+                        <div>
+                        <input type="${alpha[i].fieldType}">
+                        </div>
                     </div>`
         innerHTM += temp
     }

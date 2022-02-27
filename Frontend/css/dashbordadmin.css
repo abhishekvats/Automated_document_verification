@@ -87,6 +87,7 @@ select:focus {
     outline: none;
 }
 
+.card>.content>.cardlist>div>input,
 .card>.content>.cardlist>input {
     padding: 0px 10px;
     height: 70%;
